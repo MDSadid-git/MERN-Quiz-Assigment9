@@ -11,8 +11,18 @@ export const router = createBrowserRouter([
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
-      { path: "/", element: <Home></Home> },
-      { path: "/home", element: <Home></Home> },
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: async () =>
+          fetch("https://openapi.programming-hero.com/api/quiz"),
+      },
+      {
+        path: "/home",
+        element: <Home></Home>,
+        loader: async () =>
+          fetch("https://openapi.programming-hero.com/api/quiz"),
+      },
       { path: "/about", element: <About></About> },
       { path: "/blog", element: <Blog></Blog> },
     ],
