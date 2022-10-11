@@ -49,11 +49,11 @@ const Hero = () => {
                 </svg>
                 <span className="relative">The</span>
               </span>{" "}
-              quick, brown fox jumps over a lazy dog
+              Top Quize on the MERN stack
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque rem aperiam, eaque ipsa quae.
+              MERN stack are provided to boost your skills and knowledge on the
+              MERN stack but easily clear technical interview on the MERN stack.
             </p>
           </div>
           {/* <div>
