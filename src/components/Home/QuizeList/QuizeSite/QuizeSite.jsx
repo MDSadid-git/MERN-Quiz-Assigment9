@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const QuizeSite = ({ quizeArea: { id, name, logo, total } }) => {
   return (
@@ -14,12 +15,14 @@ const QuizeSite = ({ quizeArea: { id, name, logo, total } }) => {
             <h2 className="text-3xl font-semibold tracking-wide">{name}</h2>
             <p className="dark:text-gray-100">Total Quiz: {total}</p>
           </div>
-          <button
-            type="button"
-            className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 dark:text-gray-900"
-          >
-            Quize Test
-          </button>
+          <Link to={`/quiztest/${id}`}>
+            <button
+              type="button"
+              className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 dark:text-gray-900"
+            >
+              Quize Test
+            </button>
+          </Link>
         </div>
       </div>
     </div>
