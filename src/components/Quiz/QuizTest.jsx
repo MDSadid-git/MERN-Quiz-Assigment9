@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import QuizBox from "./QuizBox/QuizBox";
 
 const QuizTest = () => {
+  window.scrollTo(0, 0);
   const quizData = useLoaderData();
   const { name, questions } = quizData.data;
   return (
