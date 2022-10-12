@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import QuizOptions from "./QuizOptions/QuizOptions";
 import { EyeIcon } from "@heroicons/react/24/solid";
 
 const QuizBox = ({ qus: { question, correctAnswer, options, id } }) => {
+  const [opne, setOpen] = useState(false);
   const handleQuiz = (id) => {
     console.log(correctAnswer);
     if (correctAnswer === id) {
@@ -15,7 +16,7 @@ const QuizBox = ({ qus: { question, correctAnswer, options, id } }) => {
   return (
     <div className="bg-slate-300 p-5 m-5 rounded md:w-8/12 w-11/12 mx-auto">
       <div>
-        <p>Q: {question}</p>
+        <p className="text-lg font-semibold">Q: {question}</p>
         {options.map((myOption, myId) => (
           <QuizOptions
             key={myId}
@@ -25,8 +26,17 @@ const QuizBox = ({ qus: { question, correctAnswer, options, id } }) => {
           ></QuizOptions>
         ))}
       </div>
-      <EyeIcon className="h-6 w-6 text-blue-500" />
-      <p>{correctAnswer}</p>
+      <p className="flex">
+        Show Answer:
+        <span className="flex ml-2">
+          <EyeIcon
+            onClick={() => setOpen(!opne)}
+            className="h-6 w-6 text-gray-800 mr-1"
+          />
+          {opne ? correctAnswer : undefined}
+          {/* {correctAnswer} */}
+        </span>
+      </p>
     </div>
   );
 };
