@@ -1,8 +1,9 @@
 import React from "react";
 import { toast } from "react-toastify";
 import QuizOptions from "./QuizOptions/QuizOptions";
+import { EyeIcon } from "@heroicons/react/24/solid";
 
-const QuizBox = ({ qus: { question, correctAnswer, options } }) => {
+const QuizBox = ({ qus: { question, correctAnswer, options, id } }) => {
   const handleQuiz = (id) => {
     console.log(correctAnswer);
     if (correctAnswer === id) {
@@ -20,10 +21,11 @@ const QuizBox = ({ qus: { question, correctAnswer, options } }) => {
             key={myId}
             myOption={myOption}
             handleQuiz={handleQuiz}
+            id={id}
           ></QuizOptions>
         ))}
       </div>
-      <p>me</p>
+      <EyeIcon className="h-6 w-6 text-blue-500" />
       <p>{correctAnswer}</p>
     </div>
   );
