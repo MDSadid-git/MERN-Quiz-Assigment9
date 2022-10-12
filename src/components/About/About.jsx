@@ -13,16 +13,13 @@ const About = () => {
   const onedata = dataChart.data;
   const me = onedata.map((cheat) => cheat.total);
   console.log(sCart);
-  const { name, id, total } = sCart[0];
-  // console.log(total);
-  const quizQ = dataChart.map((quiz) => quiz.total);
   return (
     <div className="flex justify-center my-20">
       <LineChart width={400} height={400} data={sCart}>
-        <Line type="monotone" dataKey={quizQ} stroke="#8884d8" />
+        <Line type="monotone" dataKey={me} stroke="#8884d8" />
         {/* <Line type="monotone" dataKey={me} stroke="#8884d8" /> */}
-        <XAxis dataKey={onedata.name} />
-        <YAxis dataKey={onedata.id} />
+        <XAxis dataKey={sCart.name} />
+        <YAxis dataKey={sCart.id} />
         <Tooltip></Tooltip>
         <Legend></Legend>
       </LineChart>
