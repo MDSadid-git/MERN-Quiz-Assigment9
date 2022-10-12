@@ -55,7 +55,7 @@ const About = () => {
           <Line
             connectNulls
             type="monotone"
-            dataKey="id"
+            dataKey="total"
             stroke="#8884d8"
             fill="#8884d8"
           />
